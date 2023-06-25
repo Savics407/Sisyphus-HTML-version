@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/molecules.css" />
+    <link rel="stylesheet" href="../css/organisms.css" />
+    <link rel="stylesheet" href="../css/atom.css" />
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"
+    ></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar__content">
+        <div class="navbar__content--logo">
+          <img
+            src="../assets/images/Fictional company logo.svg"
+            alt="fictional logo"
+          />
+        </div>
+        <div class="">
+          <ul>
+            <li class="">Dashboard</li>
+            <li class="activenav">Markets</li>
+            <li>Wallet</li>
+          </ul>
+        </div>
+        <div class="navbar__search">
+          <img src="../assets/images/icons/Search.svg" alt="search icon" />
+          <input type="search" placeholder="Search" />
+        </div>
+      </div>
+      <div class="navbar__actions">
+        <div class="usertab">
+          <img src="../assets/images/81.png" alt="user-avater" />
+          <h1>Victor Adighi...</h1>
+          <span>
+            <img src="../assets/images/icons/u_angle-right.svg" alt="icon" />
+          </span>
+        </div>
+        <div>
+          <img src="../assets/images/icons/globe.svg" alt="globe" />
+        </div>
+        <div>
+          <img src="../assets/images/icons/sign-out.svg" alt="sign-out icon" />
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="topinfo">
+        <div class="coindropdown">
+          <img
+            src="../assets/images/icons/btc_dollar.svg"
+            alt="currency-symbol"
+          />
+          <h1>BTC/USDT</h1>
+          <span>
+            <img
+              src="../assets/images/icons/angle-down-white.svg"
+              alt="caret-angle"
+            />
+          </span>
+        </div>
+
+        <div class="topinfo__info">
+          <div class="amount">
+            <h1 class="">$20,634</h1>
+          </div>
+          <div class="divider"></div>
+          <div class="hour">
+            <h1 class="hour__timer">
+              <img src="../assets/images/icons/clock.svg" alt="clock" />
+              <span>24h change</span>
+            </h1>
+            <h1 class="hour__figure main">520.80 +1.25%</h1>
+          </div>
+          <div class="divider"></div>
+          <div class="hour">
+            <h1 class="hour__timer">
+              <img src="../assets/images/icons/arrow-up.svg" alt="arrow-up" />
+              <span>24h high</span>
+            </h1>
+            <h1 class="hour__figure">520.80 +1.25%</h1>
+          </div>
+          <div class="divider"></div>
+          <div class="hour">
+            <h1 class="hour__timer">
+              <img
+                src="../assets/images/icons/arrow-down.svg"
+                alt="arrow-down"
+              />
+              <span>24h low</span>
+            </h1>
+            <h1 class="hour__figure">520.80 +1.25%</h1>
+          </div>
+          <div class="divider"></div>
+          <div class="hour">
+            <h1 class="hour__timer">
+              <img src="../assets/images/icons/chartBar.svg" alt="chartBar" />
+              <span>24h volume</span>
+            </h1>
+            <h1 class="hour__figure">75.655.26</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__extended">
+        <div class="extended">
+          <div class="tradingview">
+            <!-- chart session -->
+            <div class="tradingview__chart">
+              <div class="tradingview__filter">
+                <div class="indicators">
+                  <h1>Time</h1>
+                  <ul class="subnav">
+                    <li class="subnav__items">1H</li>
+                    <li class="subnav__items">2H</li>
+                    <li class="subnav__items">4H</li>
+                    <li class="subnav__items active">1D</li>
+                    <li class="subnav__items">1W</li>
+                    <li class="subnav__items">1M</li>
+                  </ul>
+                  <img
+                    src="../assets/images/icons/u_angle-down.svg"
+                    alt="icon"
+                  />
+
+                  <div class="indicators__extras">
+                    <div class="divider2"></div>
+                    <img
+                      src="../assets/images/icons/Candle Chart 1.svg"
+                      alt="candle chart icon"
+                    />
+                    <div class="divider2"></div>
+
+                    <h1>Fx indicators</h1>
+                    <div class="divider2"></div>
+
+                    <img src="../assets/images/icons/undo.svg" alt="undo" />
+                    <img src="../assets/images/icons/redo.svg" alt="redo" />
+                    <div class="divider2"></div>
+                  </div>
+                </div>
+                <div>
+                  <img
+                    src="../assets/images/icons/u_expand-alt.svg"
+                    alt="expand"
+                  />
+                </div>
+              </div>
+              <div class="chartHolder">
+                <div
+                  id="container"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    margin: auto;
+                  "
+                ></div>
+              </div>
+            </div>
+            <div class="orderbook">
+              <ul class="tabs">
+                <li class="tabs__links active">Order Book</li>
+                <li class="tabs__links">Recent trades</li>
+              </ul>
+
+              <!-- filter -->
+              <div class="filter">
+                <div class="filter__tabs">
+                  <div class="filter__tabs--icons active">
+                    <div class="line orange"></div>
+                    <div class="line neutral"></div>
+                    <div class="line success"></div>
+                  </div>
+
+                  <div class="filter__tabs--icons">
+                    <div class="line neutral"></div>
+                    <div class="line neutral"></div>
+                    <div class="line success"></div>
+                  </div>
+
+                  <div class="filter__tabs--icons">
+                    <div class="line orange"></div>
+                    <div class="line neutral"></div>
+                    <div class="line neutral"></div>
+                  </div>
+                </div>
+                <div class="filter__counter">
+                  <h1>10</h1>
+                  <span>
+                    <img
+                      src="../assets/images/icons/u_angle-down.svg"
+                      alt="icon"
+                    />
+                  </span>
+                </div>
+              </div>
+
+              <!-- Table -->
+
+              <div class="table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Price <br />(USDT)</th>
+                      <th>Amount <br />(BTC)</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="after1">
+                      <td>36920.12</td>
+                      <td>0.758965</td>
+                      <td>28,020.98</td>
+                    </tr>
+                    <tr class="after2">
+                      <td>36920.12</td>
+                      <td>0.758965</td>
+                      <td>28,020.98</td>
+                    </tr>
+                    <tr class="after3">
+                      <td>36920.12</td>
+                      <td>0.758965</td>
+                      <td>28,020.98</td>
+                    </tr>
+                    <tr class="after2">
+                      <td>36920.12</td>
+                      <td>0.758965</td>
+                      <td>28,020.98</td>
+                    </tr>
+                    <tr class="after5">
+                      <td>36920.12</td>
+                      <td>0.758965</td>
+                      <td>28,020.98</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="summaryDem">
+                <h1 class="">36,641.20</h1>
+                <img
+                  src="../assets/images/icons/icons/Arrow Up 2/greenArrow.svg"
+                />
+                <h1>36,641.20</h1>
+              </div>
+              <div class="table2">
+                <table>
+                  <tbody>
+                    <tr class="before1">
+                      <td>36920.12</td>
+                      <td>0.758965</td>
+                      <td>28,020.98</td>
+                    </tr>
+                    <tr class="before2">
+                      <td>36920.12</td>
+                      <td>0.758965</td>
+                      <td>28,020.98</td>
+                    </tr>
+                    <tr class="before3">
+                      <td>36920.12</td>
+                      <td>0.758965</td>
+                      <td>28,020.98</td>
+                    </tr>
+                    <tr class="before">
+                      <td>36920.12</td>
+                      <td>0.758965</td>
+                      <td>28,020.98</td>
+                    </tr>
+                    <tr class="before2">
+                      <td>36920.12</td>
+                      <td>0.758965</td>
+                      <td>28,020.98</td>
+                    </tr>
+                    <tr class="before2">
+                      <td>36920.12</td>
+                      <td>0.758965</td>
+                      <td>28,020.98</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h1>Some information here</h1>
+          </div>
+        </div>
+
+        <div class="buyAndSell">
+          <div class="buyAndSell__content">
+            <ul class="segmentedTabs">
+              <li class="segmentedTabs__links active">Buy</li>
+              <li class="segmentedTabs__links">Sell</li>
+            </ul>
+
+            <!-- Sub-nav item -->
+            <ul class="subnav">
+              <li class="subnav__items active">Limit</li>
+              <li class="subnav__items">Market</li>
+              <li class="subnav__items">Stop-Limit</li>
+            </ul>
+
+            <!-- Input field -->
+            <div class="inputField">
+              <label class="inputField__label">
+                <h1>Limit price</h1>
+                <span>
+                  <img
+                    src="../assets/images/icons/u_info-circle.svg"
+                    alt="info-icon"
+                  />
+                </span>
+              </label>
+              <div class="inputField__input">
+                <input type="number" placeholder="0.00" /> <span>USD</span>
+              </div>
+            </div>
+
+            <!-- Input field -->
+            <div class="inputField">
+              <label class="inputField__label">
+                <h1>Amount</h1>
+                <span>
+                  <img
+                    src="../assets/images/icons/u_info-circle.svg"
+                    alt="info-icon"
+                  />
+                </span>
+              </label>
+              <div class="inputField__input">
+                <input type="number" placeholder="0.00" /> <span>USD</span>
+              </div>
+            </div>
+
+            <!-- Type Dropdown -->
+            <div class="inputField">
+              <label class="inputField__label">
+                <h1>Type</h1>
+                <span>
+                  <img
+                    src="../assets/images/icons/u_info-circle.svg"
+                    alt="info-icon"
+                  />
+                </span>
+              </label>
+              <div class="inputField__dropdown">
+                <span class="inputField__dropdown--text"
+                  >Good till cancelled</span
+                >
+                <span>
+                  <img
+                    src="../assets/images/icons/u_angle-down.svg"
+                    alt="angle-down"
+                  />
+                </span>
+              </div>
+            </div>
+
+            <div class="" style="display: flex; gap: 8px">
+              <input type="checkbox" checked />
+              <label class="inputField__label">
+                <h1>Type</h1>
+                <span>
+                  <img
+                    src="../assets/images/icons/u_info-circle.svg"
+                    alt="info-icon"
+                  />
+                </span>
+              </label>
+            </div>
+
+            <div style="display: flex; justify-content: space-between">
+              <label class="inputField__label">Total</label>
+              <h1 class="inputField__dropdown--text">0.00</h1>
+            </div>
+
+            <div>
+              <button>Buy BTC</button>
+            </div>
+          </div>
+
+          <div class="buyAndSell__content2">
+            <div class="total">
+              <div class="total__content">
+                <h2>Total account value</h2>
+                <h1>0.00</h1>
+              </div>
+              <div class="total__currency">
+                <h1>NGN</h1>
+                <img
+                  src="../assets/images/icons/u_angle-down.svg"
+                  alt="angle"
+                />
+              </div>
+            </div>
+
+            <div class="total">
+              <div class="total__content">
+                <h2>Open Orders</h2>
+                <h1>0.00</h1>
+              </div>
+              <div class="total__content">
+                <h2>Available</h2>
+                <h1>0.00</h1>
+              </div>
+            </div>
+
+            <div class="total__deposit">
+              <button>Deposit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="../js/chart.js"></script>
+  </body>
+</html>

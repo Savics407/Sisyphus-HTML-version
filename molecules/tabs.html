@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/molecules.css" />
+  </head>
+  <body style="background-color: #20252b">
+    <ul class="tabs">
+      <li class="tabs__links active">Order Book</li>
+      <li class="tabs__links">Recent trades</li>
+    </ul>
+
+
+    <!-- Table filter  -->
+
+    <div class="filter">
+      <div class="filter__tabs">
+        <div class="filter__tabs--icons active">
+            <div class="line orange"></div>
+            <div class="line neutral"></div>
+            <div class="line success"></div>
+        </div>
+
+         <div class="filter__tabs--icons">
+            <div class="line neutral"></div>
+            <div class="line neutral"></div>
+            <div class="line success"></div>
+        </div>
+
+         <div class="filter__tabs--icons">
+            <div class="line orange"></div>
+            <div class="line neutral"></div>
+            <div class="line neutral"></div>
+        </div>
+
+      </div>
+      <div class="filter__counter">
+        <h1>10</h1>
+        <span>
+          <img src="../assets/images/icons/u_angle-down.svg" alt="icon" />
+        </span>
+      </div>
+    </div>
+
+<!-- Table -->
+
+<div class="table">
+  <table>
+    <thead>
+    <tr>
+      <th>Price <br />(USDT)</th>
+      <th>Amount <br />(BTC)</th>
+      <th>Total</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <td>36920.12</td>
+          <td>0.758965</td>
+          <td>28,020.98</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+    <!-- Buy and sell tabs -->
+    <ul class="segmentedTabs">
+      <li class="segmentedTabs__links active">Buy</li>
+      <li class="segmentedTabs__links">Sell</li>
+    </ul>
+
+    <!-- Sub-nav item -->
+    <ul class="subnav">
+      <li class="subnav__items active">Limit</li>
+      <li class="subnav__items">Market</li>
+      <li class="subnav__items">Stop-Limit</li>
+    </ul>
+
+    <!-- Input field -->
+    <div class="inputField">
+      <label class="inputField__label">
+        <h1>Limit price</h1>
+        <span>
+          <img src="../assets/images/icons/u_info-circle.svg" alt="info-icon" />
+        </span>
+      </label>
+      <div class="inputField__input">
+        <input type="number" placeholder="0.00" /> <span>USD</span>
+      </div>
+    </div>
+
+    <!-- Type Dropdown -->
+    <div class="inputField">
+      <label class="inputField__label">
+        <h1>Type</h1>
+        <span>
+          <img src="../assets/images/icons/u_info-circle.svg" alt="info-icon" />
+        </span>
+      </label>
+      <div class="inputField__dropdown">
+        <span class="inputField__dropdown--text">Good till cancelled</span>
+        <span>
+          <img src="../assets/images/icons/u_angle-down.svg" alt="angle-down" />
+        </span>
+      </div>
+    </div>
+
+    <!-- Type Dropdown items -->
+
+    <ul class="inputField__dropdown--items">
+      <li>Fill or kill</li>
+      <li>Good till cancelled</li>
+      <li>Good till date</li>
+      <li>Immediate or cancel</li>
+    </ul>
+
+    <!-- total account value  -->
+    <div class="total">
+      <div class="total__content">
+        <h2>Total account value</h2>
+        <h1>0.00</h1>
+      </div>
+      <div class="total__currency">
+        <h1>NGN</h1>
+        <img src="../assets/images/icons/u_angle-down.svg" alt="angle" />
+      </div>
+    </div>
+
+    <!-- Currency Switcher -->
+    <ul class="currencySwitcher">
+      <li>
+        <img src="../assets/images/nigeria.svg" alt="country Flag" />
+        <div class="currencySwitcher__title">
+          <h1>Nigerian Naira</h1>
+          <h2>NGN</h2>
+        </div>
+      </li>
+
+      <li>
+        <img src="../assets/images/british.svg" alt="country Flag" />
+        <div class="currencySwitcher__title">
+          <h1>British Pounds</h1>
+          <h2>GBP</h2>
+        </div>
+      </li>
+      <li>
+        <img src="../assets/images/US.svg" alt="country Flag" />
+        <div class="currencySwitcher__title">
+          <h1>US Dollars</h1>
+          <h2>USD</h2>
+        </div>
+      </li>
+      <li>
+        <img src="../assets/images/europe.svg" alt="country Flag" />
+        <div class="currencySwitcher__title">
+          <h1>European euros</h1>
+          <h2>EUR</h2>
+        </div>
+      </li>
+    </ul>
+
+    <!-- DropDown for coins -->
+
+    <div class="DropdownForCoins">
+      <h1 class="DropdownForCoins__heading">Select Market</h1>
+
+      <div class="DropdownForCoins__searchbar">
+        <img src="../assets/images/icons/Search.svg" alt="search icon" />
+        <input type="search" placeholder="Search" />
+      </div>
+
+      <ul class="DropdownForCoins__tabs">
+        <li class="active">All</li>
+        <li>USD</li>
+        <li>BTC</li>
+      </ul>
+
+      <div>
+        <div class="DropdownForCoins__coins">
+          <div class="left">
+            <img src="../assets/images/tokens.svg" alt="coin symbols" />
+            <h1>BTC - USDT</h1>
+          </div>
+          <div class="right">
+            <h1>$23,234.6</h1>
+            <h1 class="percentage">+0.005%</h1>
+          </div>
+        </div>
+        <div class="DropdownForCoins__coins">
+          <div class="left">
+            <img src="../assets/images/tokens.svg" alt="coin symbols" />
+            <h1>BTC - USDT</h1>
+          </div>
+          <div class="right">
+            <h1>$23,234.6</h1>
+            <h1 class="percentage">+0.005%</h1>
+          </div>
+        </div>
+        <div class="DropdownForCoins__coins">
+          <div class="left">
+            <img src="../assets/images/tokens.svg" alt="coin symbols" />
+            <h1>BTC - USDT</h1>
+          </div>
+          <div class="right">
+            <h1>$23,234.6</h1>
+            <h1 class="percentage">+0.005%</h1>
+          </div>
+        </div>
+        <div class="DropdownForCoins__coins">
+          <div class="left">
+            <img src="../assets/images/tokens.svg" alt="coin symbols" />
+            <h1>BTC - USDT</h1>
+          </div>
+          <div class="right">
+            <h1>$23,234.6</h1>
+            <h1 class="percentage">+0.005%</h1>
+          </div>
+        </div>
+        <div class="DropdownForCoins__coins">
+          <div class="left">
+            <img src="../assets/images/tokens.svg" alt="coin symbols" />
+            <h1>BTC - USDT</h1>
+          </div>
+          <div class="right">
+            <h1>$23,234.6</h1>
+            <h1 class="percentage">+0.005%</h1>
+          </div>
+        </div>
+        <div class="DropdownForCoins__coins">
+          <div class="left">
+            <img src="../assets/images/tokens.svg" alt="coin symbols" />
+            <h1>BTC - USDT</h1>
+          </div>
+          <div class="right">
+            <h1>$23,234.6</h1>
+            <h1 class="percentage">+0.005%</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

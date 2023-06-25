@@ -1,0 +1,67 @@
+@import url('https://fonts.cdnfonts.com/css/satoshi');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Color Styles */
+
+/* Pre-defining Primary Colors */
+
+:root {
+    --primary-color: "";
+    --background-color: #1C2127;
+    --chart-green: #00C076;
+    --secondary-black-tint-3: #A7B1BC;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: 'Satoshi', sans-serif;
+   
+}
+
+.section {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.section__extended {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap:8px;
+}
+
+.extended {
+    flex-grow: 1;
+}
+.tradingview {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+
+}
+.tradingview__chart {
+    flex-grow: 1;
+    background-color: #20252B;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+        border: 1px solid #262932;
+}
+
+.tradingview__filter {
+    display: flex;
+        padding: 16px;
+        justify-content: space-between;
+        align-items: flex-start;
+        align-self: stretch;
+
+}

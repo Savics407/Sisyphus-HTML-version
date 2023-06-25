@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/molecules.css" />
+    <link rel="stylesheet" href="../css/organisms.css" />
+  </head>
+  <body>
+    <div class="buyAndSell">
+      <div class="buyAndSell__content">
+        <ul class="segmentedTabs">
+          <li class="segmentedTabs__links active">Buy</li>
+          <li class="segmentedTabs__links">Sell</li>
+        </ul>
+
+        <!-- Sub-nav item -->
+        <ul class="subnav">
+          <li class="subnav__items active">Limit</li>
+          <li class="subnav__items">Market</li>
+          <li class="subnav__items">Stop-Limit</li>
+        </ul>
+
+        <!-- Input field -->
+        <div class="inputField">
+          <label class="inputField__label">
+            <h1>Limit price</h1>
+            <span>
+              <img
+                src="../assets/images/icons/u_info-circle.svg"
+                alt="info-icon"
+              />
+            </span>
+          </label>
+          <div class="inputField__input">
+            <input type="number" placeholder="0.00" /> <span>USD</span>
+          </div>
+        </div>
+
+        <!-- Input field -->
+        <div class="inputField">
+          <label class="inputField__label">
+            <h1>Amount</h1>
+            <span>
+              <img
+                src="../assets/images/icons/u_info-circle.svg"
+                alt="info-icon"
+              />
+            </span>
+          </label>
+          <div class="inputField__input">
+            <input type="number" placeholder="0.00" /> <span>USD</span>
+          </div>
+        </div>
+
+        <!-- Type Dropdown -->
+        <div class="inputField">
+          <label class="inputField__label">
+            <h1>Type</h1>
+            <span>
+              <img
+                src="../assets/images/icons/u_info-circle.svg"
+                alt="info-icon"
+              />
+            </span>
+          </label>
+          <div class="inputField__dropdown">
+            <span class="inputField__dropdown--text">Good till cancelled</span>
+            <span>
+              <img
+                src="../assets/images/icons/u_angle-down.svg"
+                alt="angle-down"
+              />
+            </span>
+          </div>
+        </div>
+
+        <div class="" style="display: flex; gap: 8px">
+          <input type="checkbox" checked />
+          <label class="inputField__label">
+            <h1>Type</h1>
+            <span>
+              <img
+                src="../assets/images/icons/u_info-circle.svg"
+                alt="info-icon"
+              />
+            </span>
+          </label>
+        </div>
+
+        <div style="display: flex; justify-content: space-between">
+          <label class="inputField__label">Total</label>
+          <h1 class="inputField__dropdown--text">0.00</h1>
+        </div>
+
+        <div>
+          <button>Buy BTC</button>
+        </div>
+      </div>
+
+      <div class="buyAndSell__content2">
+        <div class="total">
+          <div class="total__content">
+            <h2>Total account value</h2>
+            <h1>0.00</h1>
+          </div>
+          <div class="total__currency">
+            <h1>NGN</h1>
+            <img src="../assets/images/icons/u_angle-down.svg" alt="angle" />
+          </div>
+        </div>
+
+        <div class="total">
+          <div class="total__content">
+            <h2>Open Orders</h2>
+            <h1>0.00</h1>
+          </div>
+          <div class="total__content">
+            <h2>Available</h2>
+            <h1>0.00</h1>
+          </div>
+        </div>
+
+        <div class="total__deposit">
+            <button>Deposit</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

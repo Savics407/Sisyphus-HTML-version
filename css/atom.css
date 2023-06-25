@@ -1,0 +1,55 @@
+.amount {
+    color: var(--chart-green, #00C076);
+        font-size: 18px !important;
+        font-weight: 500;
+        line-height: 24px;
+        width: 91px;
+}
+
+.amount h1{
+    font-size: 18px;
+}
+.hour {
+    width: 160px;
+}
+
+.hour__timer {
+    display: flex;
+    gap: 2px;
+color: var(--secondary-black-tint-3, #A7B1BC);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.hour__figure {
+    color: #FFFFFF;
+    font-size: 14px;
+    font-family: Satoshi;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.hour__figure.main {
+color: var(--chart-green, #00C076);
+}
+
+.divider {
+    width: 1px;
+        height: 48px;
+        flex-shrink: 0;
+        border-radius: 1px;
+            opacity: 0.03999999910593033;
+            background: var(--secondary-blue-tint-3, #EAF0FE);
+            margin-right: 24px;
+}
+
+.divider2 {
+    width: 1px;
+    height: 25px;
+    flex-shrink: 0;
+    border-radius: 1px;
+    opacity: 0.03999999910593033;
+    background: var(--secondary-blue-tint-3, #EAF0FE);
+    /* margin-right: 24px; */
+}
