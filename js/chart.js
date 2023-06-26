@@ -1047,6 +1047,70 @@ function generateCandlestickData() {
   ];
 }
 
+const generateDataInterval = (data, interval) => {
+  const result = [];
+  // Convert interval to nilliseconds
+  const intervalMilliSecs = interval * 24 * 60 * 60 * 1000;
+
+  let prevDate = new Date(data[0].time);
+  let intervalStart = new Date(data[0].time);
+  let intervalEnd = new Date(intervalStart.getTime() + intervalMilliSecs);
+
+  for (let i = 0; i < data.length; i++) {
+    const currentDate = new Date(data[i].time);
+
+    if (currentDate >= intervalEnd) {
+      result.push({
+        intervalStart: intervalStart.toISOString(),
+        intervalEnd: intervalEnd.toISOString(),
+        open: data[i].open,
+        high: data[i].high,
+        low: data[i].low,
+        close: data[i].close,
+      });
+      intervalStart = new Date(intervalEnd.getTime());
+      intervalEnd = new Date(intervalStart.getTime() + intervalMilliSecs);
+    }
+
+    prevDate = currentDate;
+  }
+
+  if (prevDate < intervalEnd) {
+    result.push({
+      intervalStart: intervalStart.toISOString(),
+      intervalEnd: intervalEnd.toISOString(),
+      open: data[data.length - 1].open,
+      high: data[data.length - 1].high,
+      low: data[data.length - 1].low,
+      close: data[data.length - 1].close,
+    });
+  }
+  return result.map((intervalData) => ({
+    time: intervalData.intervalStart, // Use intervalStart as the timestamp
+    open: intervalData.open,
+    high: intervalData.high,
+    low: intervalData.low,
+    close: intervalData.close,
+  }));
+};
+
+// Datasets at different intervals
+const oneHourDataset = generateDataInterval(generateCandlestickData(), 1 / 24);
+console.log(oneHourDataset);
+const fiveMinutesDataset = generateDataInterval(
+  generateCandlestickData(),
+  5 / (24 * 60)
+);
+
+const fifteenMinutesDataset = generateDataInterval(
+  generateCandlestickData(),
+  15 / (24 * 60)
+);
+
+const oneDayDataset = generateDataInterval(generateCandlestickData(), 1);
+const oneWeekDataset = generateDataInterval(generateCandlestickData(), 7);
+
+const oneMonthDataset = generateDataInterval(generateCandlestickData(), 30);
 
 // Create the Lightweight Chart within the container element
 const chart = LightweightCharts.createChart(
@@ -1063,15 +1127,80 @@ const chart = LightweightCharts.createChart(
   }
 );
 
+const getday = document.getElementById("1day");
+const get5mins = document.getElementById("5min");
+const get15mins = document.getElementById("15min");
+const get1hour = document.getElementById("1hr");
+const get1week = document.getElementById("1week");
+const get1month = document.getElementById("1month");
+const getAll = document.getElementById("all");
 
+get1month.addEventListener("click", () => {
+  generate("1month");
+  setCandleStick("1month");
+});
+get1week.addEventListener("click", () => {
+  generate("1week");
+  setCandleStick("1week");
+});
+getday.addEventListener("click", () => {
+  generate("1day");
+  setCandleStick("1day");
+});
+
+get15mins.addEventListener("click", () => {
+  generate("15mins");
+  setCandleStick("15mins");
+});
+
+get1hour.addEventListener("click", () => {
+  generate("1hr");
+  setCandleStick("1hr");
+});
+
+get5mins.addEventListener("click", () => {
+  generate("5mins");
+  setCandleStick("5mins");
+});
+
+getAll.addEventListener("click", () => {
+  generate();
+  setCandleStick();
+});
+
+const generate = (interval) => {
+  if (interval === "1day") {
+    return oneDayDataset;
+  } else if (interval === "1hr") {
+    return oneHourDataset;
+  } else if (interval === "15mins") {
+    return fifteenMinutesDataset;
+  } else if (interval === "5mins") {
+    return fiveMinutesDataset;
+  } else if (interval === "1week") {
+    return oneWeekDataset;
+  } else if (interval === "1month") {
+    return oneMonthDataset;
+  } else {
+    return generateCandlestickData();
+  }
+};
 // Generate sample data to use within a candlestick series
-const candleStickData = generateCandlestickData();
+// const candleStickData = generateCandlestickData();
+const setCandleStick = (interval) => {
+  const newData = generate(interval);
+
+  // Update the chart with the new data
+  mainSeries.setData(newData);
+};
+
+const candleStickData = generate();
 
 // Create the Main Series (Candlesticks)
 const mainSeries = chart.addCandlestickSeries();
 
-
 // Set the data for the Main Series
+
 mainSeries.setData(candleStickData);
 
 window.addEventListener("resize", () => {
@@ -1082,17 +1211,15 @@ window.addEventListener("resize", () => {
 chart.priceScale("right").applyOptions({
   borderColor: "#A7B1BC",
   ticksVisible: true,
-
 });
 
 // Setting the border color for the horizontal axis
 chart.timeScale().applyOptions({
   borderColor: "#A7B1BC",
   //   visible: false,
-  // secondsVisible: true,
+  secondsVisible: true,
   ticksVisible: true,
   timeVisible: true,
-  
 });
 
 // Changing the Candlestick colors
@@ -1106,43 +1233,23 @@ mainSeries.applyOptions({
 
 // Changing the font
 chart.applyOptions({
-    layout: {
-        fontFamily: "'Satoshi', sans-serif",
-    },
-});
-
-
-// Adding the histogram chart 
-const chartOptions = {
   layout: {
-    background: { color: "transparent" },
-    textColor: "#A7B1BC",
     fontFamily: "'Satoshi', sans-serif",
   },
-  grid: {
-    vertLines: { color: "transparent" },
-    horzLines: { color: "transparent" },
-  },
-};
-const chartHistogram = LightweightCharts.createChart(
-  document.getElementById("container2"),
-  chartOptions
-);
-const histogramSeries = chartHistogram.addHistogramSeries({ color: "#26a69a" });
+});
 
-const data = [
-  { value: 1, time: 1642425322 },
-  { value: 8, time: 1642511722 },
-  { value: 10, time: 1642598122 },
-  { value: 20, time: 1642684522 },
-  { value: 3, time: 1642770922, color: "red" },
-  { value: 43, time: 1642857322 },
-  { value: 41, time: 1642943722, color: "red" },
-  { value: 43, time: 1643030122 },
-  { value: 56, time: 1643116522 },
-  { value: 46, time: 1643202922, color: "red" },
-];
+const subnavItems = document.querySelectorAll(".subnav__items");
 
-histogramSeries.setData(data);
+subnavItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    // Remove active class from all other subnav__items elements
+    subnavItems.forEach((otherItem) => {
+      if (otherItem !== item) {
+        otherItem.classList.remove("active");
+      }
+    });
 
-chartHistogram.timeScale().fitContent(); 
+    // Toggle the active class on the clicked element
+    item.classList.toggle("active");
+  });
+});
