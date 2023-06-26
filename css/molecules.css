@@ -30,6 +30,7 @@ input[type="number"] {
 .usertab img {
     width: 32px;
     height: 32px;
+    border-radius: 100%;
 }
 
 .usertab h1 {
@@ -51,6 +52,8 @@ input[type="number"] {
         align-items: center;
         gap: 16px;
         flex-shrink: 0;
+        cursor: pointer;
+        position: relative;
 }
 
 .coindropdown h1 {
@@ -258,6 +261,10 @@ input[type="number"] {
      background: #252A30;
 }
 
+.isClicked {
+    display: none;
+}
+
 .DropdownForCoins {
     width: 444px;
         height: 458px;
@@ -266,11 +273,15 @@ input[type="number"] {
             background: var(--dark-mode-app-bg, #1C2127);
             padding: 16px;
             overflow: hidden;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            z-index: 9;
 }
 
 .DropdownForCoins__heading {
     color: var(--primary-white, #FFF);
-    font-size: 14px;
+    font-size: 14px !important;
     font-weight: 700;
     line-height: 16px;
     margin-bottom: 14px;
@@ -321,13 +332,21 @@ input[type="number"] {
         color: #FFFFFF;
 }
 
+.coins {
+    overflow-y: auto;
+    height:calc(100% - 150px) ;
+}
 .DropdownForCoins__coins {
     display: flex;
         align-items: center;
-        gap: 99px;
+        /* gap: 99px; */
+        justify-content: space-between;
         padding: 12px 0;
 }
 
+.DropdownForCoins__coins:hover {
+    background-color: #252A30;
+}
 .DropdownForCoins__coins h1 {
     color: var(--secondary-black-tint-3, #A7B1BC);
         font-size: 14px;
@@ -694,3 +713,4 @@ display: flex;
     opacity: 0.15000000596046448;
     background: var(--support-success, #25C26E);
 }
+

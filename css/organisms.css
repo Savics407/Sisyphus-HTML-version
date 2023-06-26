@@ -64,11 +64,11 @@
     outline: none;
     width: 288px
 }
+
 .navbar__actions {
     display: flex;
     align-items: center;
     gap: 16px;
-
 }
 
 
@@ -171,4 +171,34 @@
         display: flex;
             align-items: center;
             gap: 8px;
+}
+
+footer {
+    border: 1px solid var(--dark-mode-card-stroke, #262932);
+    background: var(--dark-mode-card-bg, #20252B);
+    padding-top: 50px;
+        padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    gap: 100px;
+}
+
+.footer-content__socials {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon, .contact-link, a, .copyright {
+    color: white;
+    text-decoration: none;
+}
+
+.copyright {
+    font-size: 14px;
 }

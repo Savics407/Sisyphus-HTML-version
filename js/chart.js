@@ -1069,6 +1069,8 @@ const candleStickData = generateCandlestickData();
 
 // Create the Main Series (Candlesticks)
 const mainSeries = chart.addCandlestickSeries();
+
+
 // Set the data for the Main Series
 mainSeries.setData(candleStickData);
 
@@ -1080,15 +1082,17 @@ window.addEventListener("resize", () => {
 chart.priceScale("right").applyOptions({
   borderColor: "#A7B1BC",
   ticksVisible: true,
+
 });
 
 // Setting the border color for the horizontal axis
 chart.timeScale().applyOptions({
   borderColor: "#A7B1BC",
   //   visible: false,
-  secondsVisible: true,
+  // secondsVisible: true,
   ticksVisible: true,
   timeVisible: true,
+  
 });
 
 // Changing the Candlestick colors

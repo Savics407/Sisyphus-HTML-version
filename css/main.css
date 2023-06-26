@@ -40,12 +40,14 @@ body {
 
 .extended {
     flex-grow: 1;
+    
 }
 .tradingview {
     width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 8px;
+    margin-bottom: 8px;
 
 }
 .tradingview__chart {
@@ -64,4 +66,259 @@ body {
         align-items: flex-start;
         align-self: stretch;
 
+}
+
+.orders {
+    width: 100%;
+    border-radius: 8px;
+        border: 1px solid var(--dark-mode-card-stroke, #262932);
+        background: var(--dark-mode-card-bg, #20252B);
+        height: 561px;
+        flex-shrink: 0;
+        border-radius: 8px;
+            padding: 16px;
+}
+
+.orders__tabs {
+    display: flex;
+    width: 640px;
+    height: 32px;
+    padding: 2px;
+    align-items: flex-start;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.16);
+    list-style-type: none;
+}
+
+.orders__tabs--links {
+    display: flex;
+    padding: 6px 17.5px 6px 20px;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    color: #A7B1BC;
+    cursor: pointer;
+}
+
+.orders__tabs--links.active {
+    border-radius: 8px;
+    color: var(--primary-angel-white,
+            #FFF);
+    background: #21262C;
+    box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04), 0px 3px 8px 0px rgba(0, 0, 0, 0.12);
+}
+
+.orders__tabs--links:hover {
+    color: #fff;
+}
+
+.orders__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    height: calc(100% - 32px );
+}
+
+.orders__content div {
+display: flex;
+    width: 378px;
+    flex-direction: column;
+    align-items: center;
+        gap: 8px;
+}
+.orders__content h1 {
+    text-align: center;
+    color: var(--primary-angel-white, #FFF);
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+}
+
+.orders__content h2 {
+    text-align: center;
+    color: var(--secondary-black-tint-3, #A7B1BC);
+        text-align: center;
+        font-size: 15px;
+        font-family: Satoshi;
+        font-weight: 500;
+        line-height: 24px;
+}
+
+.auth-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    gap: 20px;
+    border-radius: 14px;
+    padding: 30px 20px;
+    background-color: #21262C;
+    box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04), 0px 3px 8px 0px rgba(0, 0, 0, 0.12);
+}
+
+.auth-container__text {
+    text-align: center;
+}
+
+.auth-container__text h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.auth-container__text h2 {
+    color: var(--secondary-black-tint-3, #A7B1BC);
+        text-align: center;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 24px;
+}
+
+.auth-container__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.auth-container__form div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+}
+
+.auth-container__form div label {
+        color: var(--secondary-black-tint-3, #A5B1BD);
+        font-size: 14px;
+}
+
+.auth-container__form input {
+        border: 1px solid #373B3F;
+        background: transparent;
+        outline: none;
+        color: var(--secondary-black-tint-3, #A5B1BD);
+        border-radius: 10px;
+        padding: 10px
+}
+
+.auth-container__form button {
+    background: #353945;
+    color: white;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+    cursor: pointer;
+}
+
+.auth-container__form button:hover, .git-container button:hover {
+    background: #3e4350;
+}
+.git-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 400px;
+    height: 90vh;
+    gap: 20px;
+    border-radius: 14px;
+    padding: 20px;
+    background-color: #21262C;
+    box-shadow: 0px 3px 1px 0px rgba(0, 0, 0, 0.04), 0px 3px 8px 0px rgba(0, 0, 0, 0.12);
+}
+
+.git-container__gravater {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.git-container__gravater img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+
+.git-container__repositories {
+    height: calc(100% - 200px);
+    position: relative;
+}
+
+.found {
+    height: 100%;
+    display: none;
+}
+.git-container__repositories #repositories {
+    height: calc(100% - 80px);
+    overflow-y: auto;
+}
+
+.scroll::-webkit-scrollbar {
+    width: 5px;
+    /* Set the width of the scrollbar */
+}
+
+.scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+    /* Set the background color of the track */
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+    /* Set the color of the scrollbar handle */
+}
+
+.scroll {
+scrollbar-width: thin;
+scrollbar-color: #f1f1f1 #888;
+}
+
+.git-container__repositories ul {
+    list-style-type: none;
+}
+
+.git-container__repositories ul li {
+    color: var(--secondary-black-tint-3, #A5B1BD);
+    font-size: 14px;
+    padding: 10px 5px ;
+}
+
+.git-container__repositories ul a {
+    text-decoration: none;
+    color: inherit;
+    text-transform: capitalize;
+}
+.git-container__repositories ul a:hover {
+    color: white;
+}
+.git-container__repositories h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.git-container button {
+    background: #353945;
+        color: white;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 30px;
+        cursor: pointer;
 }

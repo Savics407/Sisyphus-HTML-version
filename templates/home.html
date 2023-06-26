@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="../css/organisms.css" />
     <link rel="stylesheet" href="../css/atom.css" />
     <script
+      src="https://kit.fontawesome.com/c49ba4391f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
       type="text/javascript"
       src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"
     ></script>
@@ -31,13 +36,13 @@
         </div>
         <div class="navbar__search">
           <img src="../assets/images/icons/Search.svg" alt="search icon" />
-          <input type="search" placeholder="Search" />
+          <input type="search" placeholder="Search" id="nav_search" />
         </div>
       </div>
       <div class="navbar__actions">
         <div class="usertab">
-          <img src="../assets/images/81.png" alt="user-avater" />
-          <h1>Victor Adighi...</h1>
+          <img src="../assets/images/81.png" alt="user-avater" id="avatar" />
+          <h1>John Doe...</h1>
           <span>
             <img src="../assets/images/icons/u_angle-right.svg" alt="icon" />
           </span>
@@ -58,13 +63,92 @@
             src="../assets/images/icons/btc_dollar.svg"
             alt="currency-symbol"
           />
-          <h1>BTC/USDT</h1>
+          <h1 class="dropnow">BTC/USDT</h1>
           <span>
             <img
               src="../assets/images/icons/angle-down-white.svg"
               alt="caret-angle"
             />
           </span>
+          <!-- DropDown for coins -->
+
+          <div class="DropdownForCoins isClicked" id="dropdown">
+            <h1 class="DropdownForCoins__heading">Select Market</h1>
+
+            <div class="DropdownForCoins__searchbar">
+              <img src="../assets/images/icons/Search.svg" alt="search icon" />
+              <input type="search" placeholder="Search" id="coinSearch" />
+            </div>
+
+            <ul class="DropdownForCoins__tabs">
+              <li class="active">All</li>
+              <li>USD</li>
+              <li>BTC</li>
+            </ul>
+
+            <div class="coins scroll">
+              <div class="DropdownForCoins__coins">
+                <div class="left">
+                  <img src="../assets/images/tokens.svg" alt="coin symbols" />
+                  <h1>BTC/USDT</h1>
+                </div>
+                <div class="right">
+                  <h1>$23,234.6</h1>
+                  <h1 class="percentage">+0.005%</h1>
+                </div>
+              </div>
+              <div class="DropdownForCoins__coins">
+                <div class="left">
+                  <img src="../assets/images/tokens.svg" alt="coin symbols" />
+                  <h1>ETH/USDT</h1>
+                </div>
+                <div class="right">
+                  <h1>$23,234.6</h1>
+                  <h1 class="percentage">+0.005%</h1>
+                </div>
+              </div>
+              <div class="DropdownForCoins__coins">
+                <div class="left">
+                  <img src="../assets/images/tokens.svg" alt="coin symbols" />
+                  <h1>LTC/USDT</h1>
+                </div>
+                <div class="right">
+                  <h1>$23,234.6</h1>
+                  <h1 class="percentage">+0.005%</h1>
+                </div>
+              </div>
+              <div class="DropdownForCoins__coins">
+                <div class="left">
+                  <img src="../assets/images/tokens.svg" alt="coin symbols" />
+                  <h1>DOGE/USDT</h1>
+                </div>
+                <div class="right">
+                  <h1>$23,234.6</h1>
+                  <h1 class="percentage">+0.005%</h1>
+                </div>
+              </div>
+              <div class="DropdownForCoins__coins">
+                <div class="left">
+                  <img src="../assets/images/tokens.svg" alt="coin symbols" />
+                  <h1>ADA/USDT</h1>
+                </div>
+                <div class="right">
+                  <h1>$23,234.6</h1>
+                  <h1 class="percentage">+0.005%</h1>
+                </div>
+              </div>
+              <div class="DropdownForCoins__coins">
+                <div class="left">
+                  <img src="../assets/images/tokens.svg" alt="coin symbols" />
+                  <h1>XLM/USDT</h1>
+                </div>
+                <div class="right">
+                  <h1>$23,234.6</h1>
+                  <h1 class="percentage">+0.005%</h1>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="topinfo__info">
@@ -289,8 +373,22 @@
               </div>
             </div>
           </div>
-          <div>
-            <h1>Some information here</h1>
+          <div class="orders">
+            <ul class="orders__tabs">
+              <li class="orders__tabs--links active">Open Orders</li>
+              <li class="tabs__links">Positions</li>
+              <li class="tabs__links">Order History</li>
+              <li class="tabs__links">Trade History</li>
+            </ul>
+            <div class="orders__content">
+              <div class="">
+                <h1>No Open Orders</h1>
+                <h2>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id
+                  pulvinar nullam sit imperdiet pulvinar.
+                </h2>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -320,7 +418,8 @@
                 </span>
               </label>
               <div class="inputField__input">
-                <input type="number" placeholder="0.00" /> <span>USD</span>
+                <input type="number" placeholder="0.00" id="limit_price" />
+                <span>USD</span>
               </div>
             </div>
 
@@ -336,7 +435,8 @@
                 </span>
               </label>
               <div class="inputField__input">
-                <input type="number" placeholder="0.00" /> <span>USD</span>
+                <input type="number" placeholder="0.00" id="input_field" />
+                <span>USD</span>
               </div>
             </div>
 
@@ -379,7 +479,7 @@
 
             <div style="display: flex; justify-content: space-between">
               <label class="inputField__label">Total</label>
-              <h1 class="inputField__dropdown--text">0.00</h1>
+              <h1 class="inputField__dropdown--text" id="total">0.00</h1>
             </div>
 
             <div>
@@ -421,6 +521,31 @@
       </div>
     </section>
 
+    <footer>
+      <div class="footer-content">
+        <div class="footer-content__socials">
+          <a href="#" class="social-icon"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="contact-link">
+          <a href="mailto:savicstech@gmail.com">Contact Us</a>
+        </div>
+      </div>
+      <div class="copyright">&copy; 2023 Sisyphus. All rights reserved.</div>
+    </footer>
+
     <script src="../js/chart.js"></script>
+    <script src="../js/buyandsell.js"></script>
+    <script>
+      const avatar = document.getElementById("avatar");
+
+      const imageURL = avatar.src;
+      var image = localStorage.getItem("avatar");
+      // Assign the avatar to the user profile
+      image && (avatar.src = image);
+    </script>
   </body>
 </html>
