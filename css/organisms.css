@@ -115,7 +115,7 @@
 .buyAndSell__content {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 10px;
 }
 
 .buyAndSell__content button {
@@ -150,10 +150,11 @@
         /* height: 100%; */
         padding: 0 8px;
         flex-grow: 1;
+        /* border: 1px solid white; */
 }
 
 .indicators {
-    display: flex;
+        display: flex;
         padding: 2px 0px;
         align-items: center;
         gap: 8px;
@@ -182,6 +183,7 @@ footer {
     flex-direction: column;
     gap: 50px;
     align-items: center;
+    width: 100%;
 }
 
 .footer-content {
@@ -201,4 +203,101 @@ footer {
 
 .copyright {
     font-size: 14px;
+}
+
+
+@media screen and (max-width: 767px) {
+    /* Styles for mobile devices */
+    .navbar {
+            border-bottom: 1px solid #32383F;
+            background: #24273A !important;
+            height: 72px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 15px;
+        }
+    
+        .navbar__search {
+            display: none;
+        }
+
+    .navbar__content ul {
+        /* display: non; */
+        transform: translateX(200%);
+        position: absolute;
+        display: none;
+        right: 10px;
+        top: 60px;
+        gap: 0;
+        flex-direction: column;
+        border-radius: 12px;
+        border: 1px solid var(--dark-mode-input-stroke, #373B3F);
+        background: #1C2127;
+        box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+        width: 214px;
+        padding: 8px 0px;
+        z-index: 6;
+        transition: 1s;
+    }
+
+        .navbar__content ul li {
+            color: #A7B1BC;
+            text-align: left;
+            padding: 10px;
+        }
+                .topinfo__info {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    overflow: auto;
+
+                }
+
+    .topinfo {
+        flex-wrap: wrap;
+    }
+
+    .orderbook {
+        width: 100%;
+        border: none;
+        border-radius: 0%;
+        display: none;
+    }
+
+        .navbar__content--logo {
+            border-right: none;
+            
+        }
+    .navbar__actions {
+        
+        gap: 10px;
+    }
+            .indicators {
+                display: flex;
+                flex-wrap: wrap;
+                padding: 2px 0px;
+                align-items: center;
+                gap: 8px;
+            }
+
+                        .buyAndSell {
+                            /* width: 255px; */
+                            position: fixed;
+                            z-index: 9;
+                            left: 0;
+                            right: 0;
+                            bottom: -50px;
+                           transform: translateY(100%);
+                           transition: 0.3s;
+                        }
+
+                        footer {
+    padding-top: 20px;
+    gap: 30px;
+                        }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    /* Styles for tablets */
 }

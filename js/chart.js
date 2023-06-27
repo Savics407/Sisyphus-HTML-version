@@ -1050,7 +1050,7 @@ function generateCandlestickData() {
 const generateDataInterval = (data, interval) => {
   const result = [];
   // Convert interval to nilliseconds
-  const intervalMilliSecs = interval * 24 * 60 * 60 * 1000;
+  const intervalMilliSecs = interval;
 
   let prevDate = new Date(data[0].time);
   let intervalStart = new Date(data[0].time);
@@ -1095,22 +1095,35 @@ const generateDataInterval = (data, interval) => {
 };
 
 // Datasets at different intervals
-const oneHourDataset = generateDataInterval(generateCandlestickData(), 1 / 24);
-console.log(oneHourDataset);
+const oneHourDataset = generateDataInterval(
+  generateCandlestickData(),
+  1 * 60 * 60 * 1000
+);
+// console.log(oneHourDataset);
 const fiveMinutesDataset = generateDataInterval(
   generateCandlestickData(),
-  5 / (24 * 60)
+  5 * 60 * 1000
 );
 
 const fifteenMinutesDataset = generateDataInterval(
   generateCandlestickData(),
-  15 / (24 * 60)
+  15 * 60 * 1000
 );
 
-const oneDayDataset = generateDataInterval(generateCandlestickData(), 1);
-const oneWeekDataset = generateDataInterval(generateCandlestickData(), 7);
+const oneDayDataset = generateDataInterval(
+  generateCandlestickData(),
+  1 * 24 * 60 * 60 * 1000
+);
+// console.log(oneDayDataset);
+const oneWeekDataset = generateDataInterval(
+  generateCandlestickData(),
+  7 * 24 * 60 * 60 * 1000
+);
 
-const oneMonthDataset = generateDataInterval(generateCandlestickData(), 30);
+const oneMonthDataset = generateDataInterval(
+  generateCandlestickData(),
+  30 * 24 * 60 * 60 * 1000
+);
 
 // Create the Lightweight Chart within the container element
 const chart = LightweightCharts.createChart(

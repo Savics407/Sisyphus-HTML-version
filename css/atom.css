@@ -1,5 +1,4 @@
 .amount {
-    color: var(--chart-green, #00C076);
         font-size: 18px !important;
         font-weight: 500;
         line-height: 24px;
@@ -8,6 +7,7 @@
 
 .amount h1{
     font-size: 18px;
+    color: var(--chart-green, #00C076);
 }
 .hour {
     width: 160px;
@@ -52,4 +52,31 @@ color: var(--chart-green, #00C076);
     opacity: 0.03999999910593033;
     background: var(--secondary-blue-tint-3, #EAF0FE);
     /* margin-right: 24px; */
+}
+
+.menu {
+    display: none;
+    
+}
+
+@media screen and (max-width: 767px) {
+    /* Styles for mobile devices */
+    .signout {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
+        .hour {
+            width: 120px;
+        }
+
+        .hide {
+            display: none;
+        }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    /* Styles for tablets */
 }

@@ -23,6 +23,10 @@ body {
    
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
 .section {
     padding: 8px;
     display: flex;
@@ -48,7 +52,7 @@ body {
     justify-content: space-between;
     gap: 8px;
     margin-bottom: 8px;
-
+    
 }
 .tradingview__chart {
     flex-grow: 1;
@@ -57,6 +61,7 @@ body {
     flex-direction: column;
     border-radius: 8px;
         border: 1px solid #262932;
+    transition: 1s;
 }
 
 .tradingview__filter {
@@ -64,7 +69,6 @@ body {
         padding: 16px;
         justify-content: space-between;
         align-items: flex-start;
-        align-self: stretch;
 
 }
 
@@ -156,6 +160,7 @@ display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 10px;
 }
 .auth-container {
     display: flex;
@@ -321,4 +326,135 @@ scrollbar-color: #f1f1f1 #888;
         border-radius: 10px;
         padding: 10px 30px;
         cursor: pointer;
+}
+
+.deskhide {
+    display: none !important;
+}
+
+.expand {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    width: 100% !important;
+}
+@media screen and (max-width: 767px) {
+    /* Styles for mobile devices */
+    .section__extended {
+            flex-wrap: wrap;
+        }
+                .tradingview__chart {
+                   width: 100%;
+                   height: 80vh;
+                   border: none;
+                   padding: 0;
+                }
+    .orders__tabs {
+        display: flex;
+        width: 100%;
+        display: none;
+    }
+
+.orders__content div {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.orders__content h1 {
+    text-align: center;
+    font-size: 18px;
+}
+
+.orders__content h2 {
+    text-align: center;
+    font-size: 14px;
+}
+
+.tradingview {
+    display: block;
+    border-radius: 8px;
+    border: 1px solid #262932;
+    padding: 10px 5px;
+    background-color: #20252B;
+    width: 100%;
+}
+
+
+.deskhide {
+    display: flex !important ;
+}
+.tradingview__filter {
+    width: 100% !important;
+    flex-wrap: wrap;
+    overflow-x: auto;
+}
+
+.orders {
+   
+    height: 300px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    padding: 16px;
+}
+.buyMobile {
+    border: 1px solid var(--dark-mode-card-stroke, #262932);
+        background: var(--dark-mode-change-bg, #262B31);
+        display: flex;
+            width: 100%;
+            height: 64px;
+            padding: 16px;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 16px;
+            flex-shrink: 0;
+}
+.buy {
+    border-radius: 8px;
+        background: var(--support-success, #25C26E);
+        display: flex;
+            height: 32px;
+            padding: 8px 50px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+            border: none;
+            outline: none;color: var(--primary-angel-white, #FFF);
+                font-size: 16px;
+                font-family: Satoshi;
+                font-weight: 700;
+                line-height: 32px;
+}
+
+.sell {
+    border-radius: 8px;
+        background: var(--support-alert, #FF554A);
+        display: flex;
+            height: 32px;
+            padding: 8px 50px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+            border: none;
+                outline: none;color: var(--primary-angel-white, #FFF);
+                    font-size: 16px;
+                    font-family: Satoshi;
+                    font-weight: 700;
+                    line-height: 32px;
+}
+
+.git-container__repositories h1 {
+    color: white;
+    font-size: 20px;
+}
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    /* Styles for tablets */
 }

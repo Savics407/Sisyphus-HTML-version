@@ -28,10 +28,11 @@
           />
         </div>
         <div class="">
-          <ul>
-            <li class="">Dashboard</li>
-            <li class="activenav">Markets</li>
+          <ul id="nav">
+            <li class="activenav">Dashboard</li>
+            <li class="">Markets</li>
             <li>Wallet</li>
+            <li class="deskhide"><a href="/" style="color: inherit;">Logout</a></li>
           </ul>
         </div>
         <div class="navbar__search">
@@ -50,8 +51,13 @@
         <div>
           <img src="./assets/images/icons/globe.svg" alt="globe" />
         </div>
-        <div>
+        <div class="signout">
+          <a href="/" >
           <img src="./assets/images/icons/sign-out.svg" alt="sign-out icon" />
+          </a>
+        </div>
+        <div class="menu">
+          <img src="./assets/images/icons/menu-alt-1.svg" alt="menu" />
         </div>
       </div>
     </div>
@@ -70,6 +76,9 @@
               alt="caret-angle"
             />
           </span>
+          <div class="amount">
+            <h1 class="">$20,634</h1>
+          </div>
           <!-- DropDown for coins -->
 
           <div class="DropdownForCoins isClicked" id="dropdown">
@@ -152,43 +161,42 @@
         </div>
 
         <div class="topinfo__info">
-          <div class="amount">
-            <h1 class="">$20,634</h1>
-          </div>
-          <div class="divider"></div>
-          <div class="hour">
-            <h1 class="hour__timer">
-              <img src="./assets/images/icons/clock.svg" alt="clock" />
-              <span>24h change</span>
-            </h1>
-            <h1 class="hour__figure main">520.80 +1.25%</h1>
-          </div>
-          <div class="divider"></div>
-          <div class="hour">
-            <h1 class="hour__timer">
-              <img src="./assets/images/icons/arrow-up.svg" alt="arrow-up" />
-              <span>24h high</span>
-            </h1>
-            <h1 class="hour__figure">520.80 +1.25%</h1>
-          </div>
-          <div class="divider"></div>
-          <div class="hour">
-            <h1 class="hour__timer">
-              <img
-                src="./assets/images/icons/arrow-down.svg"
-                alt="arrow-down"
-              />
-              <span>24h low</span>
-            </h1>
-            <h1 class="hour__figure">520.80 +1.25%</h1>
-          </div>
-          <div class="divider"></div>
-          <div class="hour">
-            <h1 class="hour__timer">
-              <img src="./assets/images/icons/chartBar.svg" alt="chartBar" />
-              <span>24h volume</span>
-            </h1>
-            <h1 class="hour__figure">75.655.26</h1>
+          <div class="rates scroll">
+            <div class="divider hide"></div>
+            <div class="hour">
+              <h1 class="hour__timer">
+                <img src="./assets/images/icons/clock.svg" alt="clock" />
+                <span>24h change</span>
+              </h1>
+              <h1 class="hour__figure main">520.80 +1.25%</h1>
+            </div>
+            <div class="divider"></div>
+            <div class="hour">
+              <h1 class="hour__timer">
+                <img src="./assets/images/icons/arrow-up.svg" alt="arrow-up" />
+                <span>24h high</span>
+              </h1>
+              <h1 class="hour__figure">520.80 +1.25%</h1>
+            </div>
+            <div class="divider"></div>
+            <div class="hour">
+              <h1 class="hour__timer">
+                <img
+                  src="./assets/images/icons/arrow-down.svg"
+                  alt="arrow-down"
+                />
+                <span>24h low</span>
+              </h1>
+              <h1 class="hour__figure">520.80 +1.25%</h1>
+            </div>
+            <div class="divider"></div>
+            <div class="hour">
+              <h1 class="hour__timer">
+                <img src="./assets/images/icons/chartBar.svg" alt="chartBar" />
+                <span>24h volume</span>
+              </h1>
+              <h1 class="hour__figure">75.655.26</h1>
+            </div>
           </div>
         </div>
       </div>
@@ -197,25 +205,31 @@
         <div class="extended">
           <div class="tradingview">
             <!-- chart session -->
+             <ul class="tabs deskhide">
+                <li class="tabs__links active" id="forCharts">Charts</li>
+                <li class="tabs__links " id="orderbook">Order Book</li>
+                <li class="tabs__links hide">Recent trades</li>
+              </ul>
             <div class="tradingview__chart">
-              <div class="tradingview__filter">
-                <div class="indicators">
+              <div class="tradingview__filter scroll">
+                <div class="indicators ">
                   <h1>Time</h1>
                   <ul class="subnav">
-                    <li class="subnav__items" id="5min" >5M</li>
-                    <li class="subnav__items" id="15min" >15M</li>
-                    <li class="subnav__items" id="1hr" >1H</li>
+                    <li class="subnav__items" id="5min">5M</li>
+                    <li class="subnav__items" id="15min">15M</li>
+                    <li class="subnav__items" id="1hr">1H</li>
                     <li class="subnav__items" id="1day">1D</li>
-                    <li class="subnav__items" id="1week" >1W</li>
-                    <li class="subnav__items" id="1month" >1M</li>
-                    <li class="subnav__items active" id="all" >All</li>
+                    <li class="subnav__items" id="1week">1W</li>
+                    <li class="subnav__items" id="1month">1M</li>
+                    <li class="subnav__items active" id="all">All</li>
                   </ul>
                   <img
                     src="./assets/images/icons/u_angle-down.svg"
                     alt="icon"
+                    class="hide"
                   />
 
-                  <div class="indicators__extras">
+                  <div class="indicators__extras hide">
                     <div class="divider2"></div>
                     <img
                       src="./assets/images/icons/Candle Chart 1.svg"
@@ -231,10 +245,10 @@
                     <div class="divider2"></div>
                   </div>
                 </div>
-                <div>
+                <div class="hide" style="cursor: pointer;">
                   <img
                     src="./assets/images/icons/u_expand-alt.svg"
-                    alt="expand"
+                    alt="expand" id="expand"
                   />
                 </div>
               </div>
@@ -251,7 +265,7 @@
               </div>
             </div>
             <div class="orderbook">
-              <ul class="tabs">
+              <ul class="tabs hide">
                 <li class="tabs__links active">Order Book</li>
                 <li class="tabs__links">Recent trades</li>
               </ul>
@@ -393,6 +407,12 @@
           </div>
         </div>
 
+        <div class="buyMobile deskhide">
+          <button class="buy">Buy</button>
+          <button class="sell">Sell</button>
+
+        </div>
+        <div class="overlay hide"></div>
         <div class="buyAndSell">
           <div class="buyAndSell__content">
             <ul class="segmentedTabs">
@@ -496,10 +516,7 @@
               </div>
               <div class="total__currency">
                 <h1>NGN</h1>
-                <img
-                  src="./assets/images/icons/u_angle-down.svg"
-                  alt="angle"
-                />
+                <img src="./assets/images/icons/u_angle-down.svg" alt="angle" />
               </div>
             </div>
 
