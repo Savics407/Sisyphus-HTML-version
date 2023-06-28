@@ -784,6 +784,38 @@ display: flex;
     bottom: 0;
     z-index: 8;
 }
+
+.coindropdown {
+    width: 100%;
+}
+.DropdownForCoins__searchbar {
+    width: 100%;
+}
+.DropdownForCoins {
+    width: 100%;
+    top: 50px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.DropdownForCoins__tabs li {
+   font-size: 14px;
+}
+.DropdownForCoins__coins h1 {
+    font-size: 12px !important;
+}
+
+.DropdownForCoins__coins .left img {
+    width: 40px;
+}
+.DropdownForCoins__coins .left {
+    gap: 5px;
+}
+
+.DropdownForCoins__coins .right {
+    gap: 10px;
+}
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
